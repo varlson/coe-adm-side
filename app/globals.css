@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+    RIGTH SIDE
+*/
+
+.hide {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.footer-group {
+  @apply md:border-none border-b border-basicBlack py-2 my-3;
+}
+
+.bg-slide-title {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.slide-title {
+  @apply absolute  text-white left-0 right-0;
+}
+
+.lg-title-item {
+  height: 65vh;
+}
+
+/* SHOW MENU */
+.showAnim {
+  left: -10px;
+  transition: width 0.6s;
+  width: 0vw;
+}
+
+.mobile-navbar-items {
+  min-width: 100px;
+}
+
+.menu-item {
+  min-width: 100px;
+  @apply text-center rounded;
+}
+.expand-items {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+/* ABOUTS  */
+
+.about-texts {
+  @apply p-3 text-justify;
+}
+.about-title-texts {
+  @apply rounded p-3 text-2xl font-bold text-white my-2 bg-darkRed;
+}
+
+.input {
+  @apply border border-basicBlack rounded-md py-3 px-4 text-center h-14 w-full;
+}
+
+.btn {
+  min-width: 80px;
+}
+
+.btnLoader {
+  min-width: 100px;
+}
+.card-item {
+  min-height: 300px;
+}
+
+.user-options {
+  top: 40px;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.op-item {
+  min-width: 80px;
+  text-align: center;
+}
+.username {
+  min-width: 120px;
+}
+
+.centering-abs {
+  @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+}
+
+.bg-upload-avatar:hover {
+  color: "white";
+  background-color: rgba(0, 0, 0, 0.3);
+}
