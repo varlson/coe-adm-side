@@ -15,11 +15,9 @@ function page({ params }: { params: { slug: string } }) {
     const fetchData = async (id: string) => {
       try {
         const resp = await getPost(id);
-        const data: IPost = resp.post;
+        const data = resp.post;
         setPost(data);
-      } catch (error) {
-        // console.log("resp error");
-        // console.log(error.msg);
+      } catch (error: any) {
         setPost(error.msg);
       }
     };

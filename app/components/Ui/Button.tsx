@@ -3,6 +3,7 @@ import React from "react";
 import ButtonLoader from "./ButtonLoader";
 import LoaderButton from "./LoaderButton";
 type btnProps = {
+  setBtnLoader?: () => void;
   label?: string;
   btnType?: btnTypes;
   btnHandler?: (id?: string) => {};
@@ -10,7 +11,14 @@ type btnProps = {
   [key: string]: any;
 };
 
-function Button({ isLoading, id, btnType, label, btnHandler }: btnProps) {
+function Button({
+  isLoading,
+  id,
+  btnType,
+  label,
+  btnHandler,
+  setBtnLoader,
+}: btnProps) {
   const clickHandler = async () => {
     if (btnHandler) btnHandler(id);
   };
@@ -34,7 +42,12 @@ function Button({ isLoading, id, btnType, label, btnHandler }: btnProps) {
 
   return (
     <div
-      onClick={clickHandler}
+      onClick={() => {
+        clickHandler();
+        if (setBtnLoader) {
+          setBtnLoader();
+        }
+      }}
       className={`${bgColor} px-2 cursor-pointer btn text-center py-1 rounded text-white`}
     >
       {label}

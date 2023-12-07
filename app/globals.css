@@ -94,3 +94,12 @@
   color: "white";
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+.placeholder-style {
+  @apply placeholder-slate-200  placeholder-opacity-60;
+}
+.placeholder-style::placeholder {
+  text-align: center;
+  font-size: large;
+  @apply font-Jura;
+}

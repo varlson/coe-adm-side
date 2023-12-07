@@ -81,6 +81,7 @@ function AddItem({ postType, role }: { postType: PostTypes; role: string }) {
     const data = new FormData();
     data.set("body", slide.body);
     data.set("title", slide.title);
+    data.set("resumo", slide.resumo);
     data.set("postType", _postType.toString());
     data.set("author", user?._id as string);
     data.append("file", currentfile);
@@ -144,23 +145,40 @@ function AddItem({ postType, role }: { postType: PostTypes; role: string }) {
             <div className="my-1">
               <p className="">{`Título de ${role}`}</p>
               <input
-                className="w-full bg-darkRed text-white font-Jura rounded h-10 px-4"
+                className="placeholder-style w-full bg-darkRed text-white font-Jura rounded h-10 px-4 text-center"
                 type="type"
                 name="title"
                 value={slide.title}
                 onChange={setSlideField}
                 maxLength={55}
                 required
+                placeholder="Título do post"
+              />
+            </div>
+            <div className="my-1">
+              <label htmlFor="resumo">
+                <p className="">{`Resumo do ${role}`}</p>
+              </label>
+              <textarea
+                maxLength={100}
+                placeholder="Resumo do post"
+                required
+                name="resumo"
+                value={slide.resumo}
+                rows={3}
+                className="placeholder-style  text-justify text-sm text-white font-Jura rounded  p-4 bg-darkRed w-full"
+                onChange={setSlideField}
               />
             </div>
             <div className="my-1">
               <p className="">{`Sobre ${role}`}</p>
               <textarea
+                placeholder="O corpo do texto"
                 required
                 name="body"
                 value={slide.body}
                 rows={15}
-                className="text-justify text-sm text-white font-Jura rounded  p-4 bg-darkRed w-full"
+                className="placeholder-style  text-justify text-sm text-white font-Jura rounded  p-4 bg-darkRed w-full"
                 onChange={setSlideField}
               />
             </div>

@@ -34,6 +34,10 @@ function Post({ post, deleteHandler, editHandler }: PostProps) {
     setImageLoading(false);
   };
 
+  const setBtnLoader = () => {
+    setEditLoading(true);
+  };
+
   useEffect(() => {
     const getAuthorName = async () => {
       const session = await getSession();
@@ -85,6 +89,7 @@ function Post({ post, deleteHandler, editHandler }: PostProps) {
       <div className="flex gap-2 justify-around">
         <Button
           isLoading={editLoading}
+          setBtnLoader={setBtnLoader}
           id={post._id}
           btnHandler={editBtn}
           btnType={btnTypes.btnWarning}

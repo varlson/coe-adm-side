@@ -47,6 +47,7 @@ export type IPost = {
   _id?: string;
   title: string;
   img: string;
+  resumo: string;
   body: string;
   createdAt?: Date;
   updatedAt?: Date;

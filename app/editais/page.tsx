@@ -75,6 +75,14 @@ function page() {
         </div>
       </div>
 
+      {!notices.length && (
+        <div>
+          <p className="text-center font-Jura text-2xl text-basicRed">
+            Ainda sem editais
+          </p>
+        </div>
+      )}
+
       {notices.map((notice, key) => (
         <div key={key} className="my-1 shadow bg-slate-50 p-2 border">
           <Notice

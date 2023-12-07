@@ -7,4 +7,5 @@ export const initialPost: IPost = {
   img: "",
   postType: 0,
   noticeNumber: "",
+  resumo: "",
 };

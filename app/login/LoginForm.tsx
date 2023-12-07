@@ -110,7 +110,7 @@ function LognForm(props: Props) {
 
   return (
     <div className="bg-darkLight p-0 m-0">
-      <div className=" grid place-items-center w-9/12 m-auto ">
+      <div className="  ">
         <form onSubmit={submitHandler} action="" className=" w-full ">
           <div className="w-3/5 m-auto gap-x-10  my-10 p-10 grid col-span-1 border shadow-md bg-white">
             <input

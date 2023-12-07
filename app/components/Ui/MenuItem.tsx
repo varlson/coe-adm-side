@@ -1,6 +1,7 @@
 import { IQuery } from "@/types/types";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import Loader from "./Loader";
 
 type menuItemProps = {
   label: string;
@@ -8,9 +9,12 @@ type menuItemProps = {
   img: string;
   bgColor?: string;
   isClickable: boolean;
+  isLoading: boolean;
 };
 
 function MenuItem({ label, link, img, bgColor, isClickable }: menuItemProps) {
+  const [isCliked, setIsCliked] = useState(false);
+  if (isCliked) return <Loader color="red" size="75" />;
   if (!isClickable) {
     return (
       <div
@@ -28,6 +32,7 @@ function MenuItem({ label, link, img, bgColor, isClickable }: menuItemProps) {
 
   return (
     <div
+      onClick={(e) => setIsCliked(true)}
       className={`${
         bgColor ? bgColor : "bg-darkRed500"
       } text-white px-3 rounded-md shadow-md`}
